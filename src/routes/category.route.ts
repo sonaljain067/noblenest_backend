@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { fetchCategories, fetchSubCategories } from "../controllers/category.controller.js";
+import { fetchCategories, fetchCategorySubCategories, fetchSubCategories } from "../controllers/category.controller.js";
 
 const router = Router();
 
@@ -7,5 +7,7 @@ const router = Router();
 router.route("/").get(fetchCategories)
 
 router.route("/sub").get(fetchSubCategories)
+
+router.route("/cat/sub/:id").get(fetchCategorySubCategories)
 
 export default router; 

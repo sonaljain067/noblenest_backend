@@ -6,7 +6,7 @@ import { upload } from "../middlewares/multer.middleware.js";
 const router = Router(); 
 
 // non-user routes 
-router.post("/register", upload.single("avatar"), registerUser); 
+router.post("/login", upload.single("avatar"), registerUser); 
 
 router.route("/change-password").patch(verifyJWT, changePassword)
 

@@ -188,8 +188,7 @@ export const registerProduct = asyncHandler(async(
             }
         }
     }
-
-    let subCategory = await SubCategory.findOne({ name: subcategory })
+    let subCategory = await SubCategory.findById(subcategory)
     if(!subCategory) {
         throw new ApiError(404, "Subcategory doesn't exist!")
     }
